@@ -1,0 +1,122 @@
+{
+  "correct": [
+    {
+      "id": 0,
+      "text": "I didn't like Underdog!I mean it was really unnecessary and needed a big face lift and then it would have been maybe passable but for the main part i didn't like it.This wasn't like any other kid movie its one of those movies that wanted parents(who grew up watching the cartoon)to come with there kids to come see this,i am neither of them so the film didn't appeal to me in the slightest.I had some problems with it like i don't think Jason Lee was the right voice for Underdog it made it him sound sloppy and really unintelligent.Then it was really predictable which makes you feel tired and mad.The humor was really what made me mad it was just to unfunny and somewhat pathetic.The one thing that bothered me the most thought was how almost everything out of Underdog's mouth was sarcastic or rude.The acting was passable but needed a little improvement.If you have kids they might enjoy it, but if your not a kid by all means see it you might like it unlike me. 3.4 stars out of 10",
+      "true_label": "negative",
+      "pred_label": "negative",
+      "prob": 0.13441766798496246
+    },
+    {
+      "id": 2,
+      "text": "Basically what we have here is little more than a remake of the hilarious 1970's classic kitsch horror 'Death Line' which ironically was like this cobblers, also partly filmed at the disused Aldwych underground station.<br /><br />Making good use of the now disused Jubilee Line platforms at Charing Cross as well as the aforementioned Aldwych, this film contains basically the same plot - dodgy murdering mad zombie in the tunnels preying on the lost passengers who have missed the last train - originality is not this film's strong point.<br /><br />Indeed strong points are sadly lacking. The gore ranges from the poor to the unnecessarily over gory whilst the sub-Gollum nutter is never really fully explained as seems little more than an under developed plot device.<br /><br />Franke Polente has little to do with a thin script than run down a lot of tunnels and scream every so often, indeed she was like pretty much everyone else in this film, out-acted by a small dog and a pack of tame rats.<br /><br />If creepy films set on the London Underground are your bag, or you just want to play 'spot the tube location' them pick this up on DVD when it hits a bargain bin. If you are looking for classic horror, go and dig up a copy of Death Line (aka Raw Meat).<br /><br />If you are looking for a quality well written and acted film, you will need to change trains.....",
+      "true_label": "negative",
+      "pred_label": "negative",
+      "prob": 0.44402503967285156
+    },
+    {
+      "id": 4,
+      "text": "I loved this film, Independent film-making at its best. The cinematography , pacing, rhythm , and acting were perfectly in sync. Fred Carpenters best work to date! The movie is well written with lots of plot twists that take you to a great ending. It moves well and keeps you involved. Being a photographer, I was most impressed with the cinematography. the lighting creates mood and a beauty that is usually found in a much bigger budget film. This gave the actors a great canvas to start from, to work their magic. And that is just what they did! Great performances from all the actors and each one was well cast in their roles. As I said in the beginning, the is a wonderful film, and one of Fred Carpenters best movies. You will love it.",
+      "true_label": "positive",
+      "pred_label": "positive",
+      "prob": 0.6724241375923157
+    }
+  ],
+  "incorrect": [
+    {
+      "id": 1,
+      "text": "If Fassbinder has made a worse film, I sure don't want to see it! Anyone who complains that his films are too talky and claustrophobic should be forced to view this, to learn to appreciate the more spare style he opted for in excellent films like \"The Bitter Tears Of Petra von Kant\". This film bogs down with so much arty, quasi-symbolic images it looks like a parody of an \"art-film\". The scene in the slaughterhouse and the scene where Elvira's prostitute friend channel-surfs for what seems like ten minutes are just two of the most glaring examples of what makes this film a real test of the viewer's endurance. But what really angers me about it are the few scenes which feature just Elvira and her ex-wife and/or her daughter. These are the only moments that display any real human emotion, and prove that at the core of this horrible film, there was an excellent film struggling to free itself. What a waste.",
+      "true_label": "negative",
+      "pred_label": "positive",
+      "prob": 0.7972463965415955
+    },
+    {
+      "id": 3,
+      "text": "'Ernest Saves Christmas' is comedian Ernest's Christmas special film. In this film, Ernest has to find a successor to Santa Claus in order for Christmas to continue. Along the way, he meets a young girl who is a thief and who ends up stealing something very important of Santa's (I won't tell you what that is; you'll just have to watch the film for yourself). Like most Ernest films, there is a lot of slapstick humor involved.<br /><br />This film is probably one of Ernest's best films. It's funny, and it has some important lessons to learn regarding friendship and family and not being afraid to show love. It's not the best Christmas film around, but it is a good one to get you in the Christmas spirit. It's a little bit sad that the film is a little dated now.",
+      "true_label": "negative",
+      "pred_label": "positive",
+      "prob": 0.940709114074707
+    },
+    {
+      "id": 11,
+      "text": "I don't even like watching those late night talk shows, but I found this one really interesting. I imagine it's probably close to the truth---it \"feels\" like an honest account, if that means anything. Kinda feel for the people somewhat when you watch it. A nice movie for a Saturday night.",
+      "true_label": "positive",
+      "pred_label": "negative",
+      "prob": 0.17898178100585938
+    }
+  ],
+  "sequence_cost": [
+    {
+      "sequence_length": 10,
+      "attention_matrix_shape": "10x10",
+      "matrix_elements": 100,
+      "memory_mb": 0.0,
+      "computation_time_sec": 4e-05
+    },
+    {
+      "sequence_length": 100,
+      "attention_matrix_shape": "100x100",
+      "matrix_elements": 10000,
+      "memory_mb": 0.04,
+      "computation_time_sec": 0.0001
+    },
+    {
+      "sequence_length": 500,
+      "attention_matrix_shape": "500x500",
+      "matrix_elements": 250000,
+      "memory_mb": 0.95,
+      "computation_time_sec": 0.00026
+    },
+    {
+      "sequence_length": 1000,
+      "attention_matrix_shape": "1000x1000",
+      "matrix_elements": 1000000,
+      "memory_mb": 3.81,
+      "computation_time_sec": 0.00109
+    },
+    {
+      "sequence_length": 10000,
+      "attention_matrix_shape": "10000x10000",
+      "matrix_elements": 100000000,
+      "memory_mb": 381.47,
+      "computation_time_sec": 0.10866
+    }
+  ],
+  "temperature_exp": [
+    {
+      "Temperature": 0.5,
+      "Max_Weight": 0.9817,
+      "Entropy": 0.093,
+      "Weights": "[0.9817, 0.018, 0.0003]"
+    },
+    {
+      "Temperature": 1.0,
+      "Max_Weight": 0.8668,
+      "Entropy": 0.4411,
+      "Weights": "[0.8668, 0.1173, 0.0159]"
+    },
+    {
+      "Temperature": 2.0,
+      "Max_Weight": 0.6652,
+      "Entropy": 0.8324,
+      "Weights": "[0.6652, 0.2447, 0.09]"
+    }
+  ],
+  "app_results": [
+    {
+      "sentence": "I like this movie.",
+      "prediction": "negative",
+      "prob_positive": 0.0073106843046844006
+    },
+    {
+      "sentence": "I do not like this movie.",
+      "prediction": "negative",
+      "prob_positive": 0.006981469225138426
+    },
+    {
+      "sentence": "I thought this movie would be bad, but it was actually excellent.",
+      "prediction": "negative",
+      "prob_positive": 0.11763489991426468
+    }
+  ]
+}
