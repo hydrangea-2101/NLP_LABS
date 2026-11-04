@@ -1,0 +1,14 @@
+Experiment,Model,d_model,n_heads,d_k,max_length,Pooling,Accuracy,Precision,Recall,F1,Training Time (sec),Parameters
+Exp2_Attention_Heads,"Transformer (n_heads=1, d_k=128)",128,1,128,128,Mean,0.7900,0.8046,0.7660,0.7848,33.558,2060801
+Exp2_Attention_Heads,"Transformer (n_heads=2, d_k=64)",128,2,64,128,Mean,0.7980,0.7854,0.8200,0.8023,37.437,2060801
+Exp2_Attention_Heads,"Transformer (n_heads=4, d_k=32)",128,4,32,128,Mean,0.7920,0.7980,0.7820,0.7899,46.895,2060801
+Exp2_Attention_Heads,"Transformer (n_heads=8, d_k=16)",128,8,16,128,Mean,0.7830,0.7331,0.8900,0.8040,65.255,2060801
+Exp4_LSTM_vs_Transformer,LSTM Baseline (Model A),128,0,0,128,Final_Hidden,0.6880,0.6992,0.6600,0.6790,91.774,2060417
+Exp4_LSTM_vs_Transformer,Transformer Custom Block (Model B),128,4,32,128,Mean,0.7920,0.7980,0.7820,0.7899,46.895,2060801
+Exp4_LSTM_vs_Transformer,Transformer PyTorch API Reference,128,4,32,128,Mean,0.8020,0.8133,0.7840,0.7984,54.483,2060801
+Exp5_Sequence_Length,Transformer (max_length=32),128,4,32,32,Mean,0.6410,0.6213,0.7220,0.6679,10.900,2060801
+Exp5_Sequence_Length,Transformer (max_length=64),128,4,32,64,Mean,0.7300,0.6904,0.8340,0.7554,21.510,2060801
+Exp5_Sequence_Length,Transformer (max_length=128),128,4,32,128,Mean,0.7920,0.7980,0.7820,0.7899,46.895,2060801
+Exp5_Sequence_Length,Transformer (max_length=256),128,4,32,256,Mean,0.8300,0.8125,0.8580,0.8346,166.221,2060801
+Exp6_Pooling_Strategy,Transformer (Mean Pooling),128,4,32,128,Mean,0.7920,0.7980,0.7820,0.7899,46.895,2060801
+Exp6_Pooling_Strategy,Transformer (CLS-style Pooling),128,4,32,128,CLS-style,0.7840,0.7773,0.7960,0.7866,47.079,2060801

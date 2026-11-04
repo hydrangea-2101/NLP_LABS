@@ -1,0 +1,862 @@
+{
+  "exp2_attention_heads": [
+    {
+      "Heads": 1,
+      "d_k": 128,
+      "Parameters": 2060801,
+      "Training_Time_sec": 33.558,
+      "Accuracy": 0.79,
+      "Precision": 0.8046,
+      "Recall": 0.766,
+      "F1": 0.7848
+    },
+    {
+      "Heads": 2,
+      "d_k": 64,
+      "Parameters": 2060801,
+      "Training_Time_sec": 37.437,
+      "Accuracy": 0.798,
+      "Precision": 0.7854,
+      "Recall": 0.82,
+      "F1": 0.8023
+    },
+    {
+      "Heads": 4,
+      "d_k": 32,
+      "Parameters": 2060801,
+      "Training_Time_sec": 46.895,
+      "Accuracy": 0.792,
+      "Precision": 0.798,
+      "Recall": 0.782,
+      "F1": 0.7899
+    },
+    {
+      "Heads": 8,
+      "d_k": 16,
+      "Parameters": 2060801,
+      "Training_Time_sec": 65.255,
+      "Accuracy": 0.783,
+      "Precision": 0.7331,
+      "Recall": 0.89,
+      "F1": 0.804
+    }
+  ],
+  "exp3_head_diversity": {
+    "sentence": "the movie was not good at first but the ending was truly great",
+    "head_stats": [
+      {
+        "head": 1,
+        "avg_entropy": 1.3319,
+        "max_weight": 0.9993,
+        "strongest_pair": "'great' -> 'great' (0.999)"
+      },
+      {
+        "head": 2,
+        "avg_entropy": 2.3621,
+        "max_weight": 0.382,
+        "strongest_pair": "'not' -> 'ending' (0.382)"
+      },
+      {
+        "head": 3,
+        "avg_entropy": 2.3893,
+        "max_weight": 0.2403,
+        "strongest_pair": "'movie' -> 'good' (0.240)"
+      },
+      {
+        "head": 4,
+        "avg_entropy": 2.3683,
+        "max_weight": 0.3337,
+        "strongest_pair": "'the' -> 'truly' (0.334)"
+      }
+    ],
+    "pairwise_cosine_similarity": [
+      [
+        1.0,
+        0.3087,
+        0.3907,
+        0.4429
+      ],
+      [
+        0.3087,
+        1.0,
+        0.7854,
+        0.694
+      ],
+      [
+        0.3907,
+        0.7854,
+        1.0,
+        0.699
+      ],
+      [
+        0.4429,
+        0.694,
+        0.699,
+        1.0
+      ]
+    ]
+  },
+  "exp4_lstm_vs_transformer": [
+    {
+      "Model": "LSTM (Model A)",
+      "Parameters": 2060417,
+      "Training_Time_sec": 91.774,
+      "Accuracy": 0.688,
+      "Precision": 0.6992,
+      "Recall": 0.66,
+      "F1": 0.679
+    },
+    {
+      "Model": "Transformer (Custom Block - Model B)",
+      "Parameters": 2060801,
+      "Training_Time_sec": 46.895,
+      "Accuracy": 0.792,
+      "Precision": 0.798,
+      "Recall": 0.782,
+      "F1": 0.7899
+    },
+    {
+      "Model": "Transformer (PyTorch API Reference)",
+      "Parameters": 2060801,
+      "Training_Time_sec": 54.483,
+      "Accuracy": 0.802,
+      "Precision": 0.8133,
+      "Recall": 0.784,
+      "F1": 0.7984
+    }
+  ],
+  "exp5_sequence_length": [
+    {
+      "Length": 32,
+      "Avg_Tokens_Retained": 32.0,
+      "Pct_Tokens_Retained": 21.5,
+      "T_Squared_Elements": 1024,
+      "Batch_Attn_Memory_MB": 1.0,
+      "Training_Time_sec": 10.9,
+      "Accuracy": 0.641,
+      "F1": 0.6679
+    },
+    {
+      "Length": 64,
+      "Avg_Tokens_Retained": 63.2,
+      "Pct_Tokens_Retained": 41.3,
+      "T_Squared_Elements": 4096,
+      "Batch_Attn_Memory_MB": 4.0,
+      "Training_Time_sec": 21.51,
+      "Accuracy": 0.73,
+      "F1": 0.7554
+    },
+    {
+      "Length": 128,
+      "Avg_Tokens_Retained": 117.7,
+      "Pct_Tokens_Retained": 70.1,
+      "T_Squared_Elements": 16384,
+      "Batch_Attn_Memory_MB": 16.0,
+      "Training_Time_sec": 46.895,
+      "Accuracy": 0.792,
+      "F1": 0.7899
+    },
+    {
+      "Length": 256,
+      "Avg_Tokens_Retained": 175.6,
+      "Pct_Tokens_Retained": 90.5,
+      "T_Squared_Elements": 65536,
+      "Batch_Attn_Memory_MB": 64.0,
+      "Training_Time_sec": 166.221,
+      "Accuracy": 0.83,
+      "F1": 0.8346
+    }
+  ],
+  "scaling_benchmark": [
+    {
+      "T": 64,
+      "Transformer_ms": 2.75,
+      "LSTM_ms": 1.85
+    },
+    {
+      "T": 128,
+      "Transformer_ms": 5.08,
+      "LSTM_ms": 3.25
+    },
+    {
+      "T": 256,
+      "Transformer_ms": 18.65,
+      "LSTM_ms": 5.87
+    },
+    {
+      "T": 512,
+      "Transformer_ms": 49.3,
+      "LSTM_ms": 10.88
+    },
+    {
+      "T": 1024,
+      "Transformer_ms": 194.58,
+      "LSTM_ms": 32.52
+    }
+  ],
+  "exp6_pooling": [
+    {
+      "Pooling": "Mean",
+      "Accuracy": 0.792,
+      "Precision": 0.798,
+      "Recall": 0.782,
+      "F1": 0.7899,
+      "Training_Time_sec": 46.895
+    },
+    {
+      "Pooling": "CLS-style",
+      "Accuracy": 0.784,
+      "Precision": 0.7773,
+      "Recall": 0.796,
+      "F1": 0.7866,
+      "Training_Time_sec": 47.079
+    }
+  ],
+  "learning_curves": {
+    "transformer": {
+      "train_loss": [
+        0.6413,
+        0.3653,
+        0.1544,
+        0.0644
+      ],
+      "val_loss": [
+        0.4613,
+        0.4457,
+        0.563,
+        0.8231
+      ],
+      "train_acc": [
+        0.603,
+        0.8404,
+        0.9412,
+        0.9802
+      ],
+      "val_acc": [
+        0.785,
+        0.814,
+        0.79,
+        0.788
+      ]
+    },
+    "lstm": {
+      "train_loss": [
+        0.6937,
+        0.6803,
+        0.6245,
+        0.5369
+      ],
+      "val_loss": [
+        0.6907,
+        0.6813,
+        0.6295,
+        0.6186
+      ],
+      "train_acc": [
+        0.5074,
+        0.5778,
+        0.662,
+        0.7368
+      ],
+      "val_acc": [
+        0.543,
+        0.555,
+        0.659,
+        0.68
+      ]
+    }
+  },
+  "confusion_matrix": [
+    [
+      401,
+      99
+    ],
+    [
+      109,
+      391
+    ]
+  ],
+  "application_predictions": [
+    {
+      "category": "Short sentence (Câu ngắn)",
+      "text": "I really enjoyed this movie.",
+      "predicted_label": "Positive",
+      "probability_positive": 0.9919,
+      "top_attended_tokens": [
+        "enjoyed (0.443)",
+        "movie. (0.181)",
+        "really (0.146)"
+      ]
+    },
+    {
+      "category": "Long sentence (Câu dài)",
+      "text": "From the opening scene to the final credits, the director weaves an unforgettable story with brilliant cinematography, deeply moving performances from the entire cast, and a soundtrack that elevates every emotional moment into a true cinema classic.",
+      "predicted_label": "Positive",
+      "probability_positive": 0.9919,
+      "top_attended_tokens": [
+        "brilliant (0.093)",
+        "performances (0.091)",
+        "scene (0.066)"
+      ]
+    },
+    {
+      "category": "Negation (Phủ định)",
+      "text": "I did not enjoy this movie at all, the plot was neither funny nor interesting.",
+      "predicted_label": "Negative",
+      "probability_positive": 0.0161,
+      "top_attended_tokens": [
+        "all, (0.192)",
+        "enjoy (0.145)",
+        "neither (0.094)"
+      ]
+    },
+    {
+      "category": "Contrast (Tương phản chuyển ý)",
+      "text": "I thought this film would be terrible and boring, but it turned out to be an excellent masterpiece.",
+      "predicted_label": "Negative",
+      "probability_positive": 0.0074,
+      "top_attended_tokens": [
+        "boring, (0.409)",
+        "turned (0.073)",
+        "terrible (0.071)"
+      ]
+    },
+    {
+      "category": "Ambiguous sentiment (Cảm xúc mơ hồ / pha trộn)",
+      "text": "The visual effects were stunning and ambitious, yet the story felt hollow, slow, and exhausting.",
+      "predicted_label": "Positive",
+      "probability_positive": 0.9932,
+      "top_attended_tokens": [
+        "stunning (0.205)",
+        "were (0.119)",
+        "story (0.105)"
+      ]
+    }
+  ],
+  "error_analysis": {
+    "correct_cases": [
+      {
+        "sample_id": 0,
+        "true_label": "Negative",
+        "pred_label": "Negative",
+        "prob_positive": 0.0046,
+        "raw_len": 184,
+        "retained_len": 128,
+        "truncated": true,
+        "top_attended_tokens_overall": [
+          "unfunny (0.119)",
+          "predictable (0.035)",
+          "unnecessary (0.028)",
+          "underdog (0.022)",
+          "appeal (0.020)",
+          "wanted (0.018)"
+        ],
+        "per_head_top_tokens": {
+          "Head_1": [
+            "unfunny (0.078)",
+            "appeal (0.057)",
+            "predictable (0.032)"
+          ],
+          "Head_2": [
+            "underdog (0.047)",
+            "right (0.036)",
+            "like (0.032)"
+          ],
+          "Head_3": [
+            "unfunny (0.359)",
+            "unnecessary (0.057)",
+            "mean (0.020)"
+          ],
+          "Head_4": [
+            "predictable (0.073)",
+            "main (0.032)",
+            "would (0.032)"
+          ]
+        },
+        "raw_text": "I didn't like Underdog!I mean it was really unnecessary and needed a big face lift and then it would have been maybe passable but for the main part i didn't like it.This wasn't like any other kid movie its one of those movies that wanted parents(who grew up watching the cartoon)to come with there kids to come see this,i am neither of them so the film didn't appeal to me in the slightest.I had some problems with it like i don't think Jason Lee was the right voice for Underdog it made it him sound sloppy and really unintelligent.Then it was really predictable which makes you feel tired and mad.The humor was really what made me mad it was just to unfunny and somewhat pathetic.The one thing that bothered me the most thought was how almost everything out of Underdog's mouth was sarcastic or rude.The acting was passable but needed a little improvement.If you have kids they might enjoy it, but if your not a kid by all means see it you might like it unlike me. 3.4 stars out of 10"
+      },
+      {
+        "sample_id": 2,
+        "true_label": "Negative",
+        "pred_label": "Negative",
+        "prob_positive": 0.2888,
+        "raw_len": 239,
+        "retained_len": 128,
+        "truncated": true,
+        "top_attended_tokens_overall": [
+          "poor (0.046)",
+          "fully (0.030)",
+          "hilarious (0.029)",
+          "little (0.026)",
+          "little (0.025)",
+          "explained (0.021)"
+        ],
+        "per_head_top_tokens": {
+          "Head_1": [
+            "fully (0.096)",
+            "explained (0.051)",
+            "strong (0.031)"
+          ],
+          "Head_2": [
+            "poor (0.053)",
+            "little (0.037)",
+            "gore (0.031)"
+          ],
+          "Head_3": [
+            "poor (0.070)",
+            "little (0.057)",
+            "little (0.047)"
+          ],
+          "Head_4": [
+            "hilarious (0.085)",
+            "poor (0.038)",
+            "mad (0.024)"
+          ]
+        },
+        "raw_text": "Basically what we have here is little more than a remake of the hilarious 1970's classic kitsch horror 'Death Line' which ironically was like this cobblers, also partly filmed at the disused Aldwych underground station.<br /><br />Making good use of the now disused Jubilee Line platforms at Charing Cross as well as the aforementioned Aldwych, this film contains basically the same plot - dodgy murdering mad zombie in the tunnels preying on the lost passengers who have missed the last train - originality is not this film's strong point.<br /><br />Indeed strong points are sadly lacking. The gore ranges from the poor to the unnecessarily over gory whilst the sub-Gollum nutter is never really fully explained as seems little more than an under developed plot device.<br /><br />Franke Polente has little to do with a thin script than run down a lot of tunnels and scream every so often, indeed she was like pretty much everyone else in this film, out-acted by a small dog and a pack of tame rats.<br /><br />If creepy films set on the London Underground are your bag, or you just want to play 'spot the tube location' them pick this up on DVD when it hits a bargain bin. If you are looking for classic horror, go and dig up a copy of Death Line (aka Raw Meat).<br /><br />If you are looking for a quality well written and acted film, you will need to change trains....."
+      },
+      {
+        "sample_id": 4,
+        "true_label": "Positive",
+        "pred_label": "Positive",
+        "prob_positive": 0.9913,
+        "raw_len": 137,
+        "retained_len": 128,
+        "truncated": true,
+        "top_attended_tokens_overall": [
+          "wonderful (0.067)",
+          "great (0.050)",
+          "best (0.043)",
+          "great (0.031)",
+          "great (0.029)",
+          "twists (0.022)"
+        ],
+        "per_head_top_tokens": {
+          "Head_1": [
+            "great (0.176)",
+            "great (0.100)",
+            "great (0.098)"
+          ],
+          "Head_2": [
+            "twists (0.053)",
+            "beauty (0.024)",
+            "its (0.022)"
+          ],
+          "Head_3": [
+            "wonderful (0.185)",
+            "loved (0.031)",
+            "well (0.023)"
+          ],
+          "Head_4": [
+            "best (0.151)",
+            "lots (0.028)",
+            "acting (0.027)"
+          ]
+        },
+        "raw_text": "I loved this film, Independent film-making at its best. The cinematography , pacing, rhythm , and acting were perfectly in sync. Fred Carpenters best work to date! The movie is well written with lots of plot twists that take you to a great ending. It moves well and keeps you involved. Being a photographer, I was most impressed with the cinematography. the lighting creates mood and a beauty that is usually found in a much bigger budget film. This gave the actors a great canvas to start from, to work their magic. And that is just what they did! Great performances from all the actors and each one was well cast in their roles. As I said in the beginning, the is a wonderful film, and one of Fred Carpenters best movies. You will love it."
+      },
+      {
+        "sample_id": 6,
+        "true_label": "Negative",
+        "pred_label": "Negative",
+        "prob_positive": 0.0047,
+        "raw_len": 152,
+        "retained_len": 128,
+        "truncated": true,
+        "top_attended_tokens_overall": [
+          "finished (0.051)",
+          "this? (0.041)",
+          "forced (0.032)",
+          "this? (0.031)",
+          "only (0.029)",
+          "crap (0.021)"
+        ],
+        "per_head_top_tokens": {
+          "Head_1": [
+            "this? (0.096)",
+            "this? (0.084)",
+            "thing (0.035)"
+          ],
+          "Head_2": [
+            "finished (0.166)",
+            "forced (0.064)",
+            "watch. (0.025)"
+          ],
+          "Head_3": [
+            "only (0.076)",
+            "watching (0.034)",
+            "floor. (0.034)"
+          ],
+          "Head_4": [
+            "blind (0.042)",
+            "crap (0.034)",
+            "should (0.027)"
+          ]
+        },
+        "raw_text": "I just finished watching Going Overboard. I have to say that we should send every copy of this film to Iraq and make them watch. I even tried to get a blind women to watch this and she turned it off in like 20 min. Adam Sandler could not find a better project than this? As for the writing, if thats what you want to call it, those responsible should be forced to watch this movie forever in Hell!! I believe that somewhere I read that the budget for this film was $10,000 and they were way under. Did Wallmart get a good deal on this? Every store has a big huge bin of this crap sitting on the sales floor. The only good thing about this movie is you can use the DVD as a coaster, or trade it to a friend, but then they might not be your friend anymore!!"
+      },
+      {
+        "sample_id": 8,
+        "true_label": "Negative",
+        "pred_label": "Negative",
+        "prob_positive": 0.029,
+        "raw_len": 162,
+        "retained_len": 128,
+        "truncated": true,
+        "top_attended_tokens_overall": [
+          "awful (0.034)",
+          "idea (0.032)",
+          "ceiling (0.029)",
+          "stare (0.022)",
+          "were (0.019)",
+          "thinking. (0.019)"
+        ],
+        "per_head_top_tokens": {
+          "Head_1": [
+            "idea (0.074)",
+            "were (0.042)",
+            "no (0.040)"
+          ],
+          "Head_2": [
+            "awful (0.051)",
+            "watched (0.032)",
+            "including (0.023)"
+          ],
+          "Head_3": [
+            "ceiling (0.075)",
+            ". (0.039)",
+            "idea (0.032)"
+          ],
+          "Head_4": [
+            "awful (0.066)",
+            "played (0.029)",
+            "some (0.026)"
+          ]
+        },
+        "raw_text": "I watched this film, along with every other adaptation I could get my hands on- including seeing plays- in preparation for some academic research. The cinematography is very moving, as is the music. Unfortunately all of the life was taken out of the story. I have never seen such an awful portrayal of Mr. Rochester. All of his most fundamental traits are gone. Where is his wit? Where is his passion? Scott's Rochester more closely resembles Rochester's foil, St.John, than the character from the novel. In fact, the actor playing St.John in this adaptation played a passionate St.John while Scott is content to smash things or just stare at the ceiling (which he does all the time). I have no idea what they were thinking. I would like to give this film a slightly higher vote based on the wonderful music and cinematography but I honestly can't bear to see this film for too long because of George C. Scott's performance."
+      }
+    ],
+    "incorrect_cases": [
+      {
+        "sample_id": 1,
+        "true_label": "Negative",
+        "pred_label": "Positive",
+        "prob_positive": 0.5606,
+        "raw_len": 171,
+        "retained_len": 128,
+        "truncated": true,
+        "top_attended_tokens_overall": [
+          "worse (0.070)",
+          "looks (0.038)",
+          "excellent (0.035)",
+          "appreciate (0.033)",
+          "forced (0.032)",
+          "this, (0.023)"
+        ],
+        "per_head_top_tokens": {
+          "Head_1": [
+            "excellent (0.113)",
+            "worse (0.053)",
+            "few (0.043)"
+          ],
+          "Head_2": [
+            "worse (0.146)",
+            "forced (0.070)",
+            "von (0.034)"
+          ],
+          "Head_3": [
+            "looks (0.122)",
+            "worse (0.053)",
+            "appreciate (0.036)"
+          ],
+          "Head_4": [
+            "appreciate (0.071)",
+            "this, (0.033)",
+            "worse (0.028)"
+          ]
+        },
+        "raw_text": "If Fassbinder has made a worse film, I sure don't want to see it! Anyone who complains that his films are too talky and claustrophobic should be forced to view this, to learn to appreciate the more spare style he opted for in excellent films like \"The Bitter Tears Of Petra von Kant\". This film bogs down with so much arty, quasi-symbolic images it looks like a parody of an \"art-film\". The scene in the slaughterhouse and the scene where Elvira's prostitute friend channel-surfs for what seems like ten minutes are just two of the most glaring examples of what makes this film a real test of the viewer's endurance. But what really angers me about it are the few scenes which feature just Elvira and her ex-wife and/or her daughter. These are the only moments that display any real human emotion, and prove that at the core of this horrible film, there was an excellent film struggling to free itself. What a waste."
+      },
+      {
+        "sample_id": 3,
+        "true_label": "Negative",
+        "pred_label": "Positive",
+        "prob_positive": 0.9724,
+        "raw_len": 141,
+        "retained_len": 128,
+        "truncated": true,
+        "top_attended_tokens_overall": [
+          "saves (0.060)",
+          "regarding (0.028)",
+          "best (0.028)",
+          "best (0.026)",
+          "spirit. (0.026)",
+          "films. (0.025)"
+        ],
+        "per_head_top_tokens": {
+          "Head_1": [
+            "regarding (0.062)",
+            "films. (0.056)",
+            "you (0.037)"
+          ],
+          "Head_2": [
+            "saves (0.107)",
+            "spirit. (0.035)",
+            "comedian (0.030)"
+          ],
+          "Head_3": [
+            "saves (0.108)",
+            "spirit. (0.044)",
+            "get (0.041)"
+          ],
+          "Head_4": [
+            "best (0.083)",
+            "best (0.081)",
+            "won't (0.035)"
+          ]
+        },
+        "raw_text": "'Ernest Saves Christmas' is comedian Ernest's Christmas special film. In this film, Ernest has to find a successor to Santa Claus in order for Christmas to continue. Along the way, he meets a young girl who is a thief and who ends up stealing something very important of Santa's (I won't tell you what that is; you'll just have to watch the film for yourself). Like most Ernest films, there is a lot of slapstick humor involved.<br /><br />This film is probably one of Ernest's best films. It's funny, and it has some important lessons to learn regarding friendship and family and not being afraid to show love. It's not the best Christmas film around, but it is a good one to get you in the Christmas spirit. It's a little bit sad that the film is a little dated now."
+      },
+      {
+        "sample_id": 5,
+        "true_label": "Negative",
+        "pred_label": "Positive",
+        "prob_positive": 0.5136,
+        "raw_len": 164,
+        "retained_len": 128,
+        "truncated": true,
+        "top_attended_tokens_overall": [
+          "london (0.049)",
+          "oh (0.027)",
+          "third (0.027)",
+          "recreation (0.022)",
+          "pop (0.019)",
+          "dollar (0.018)"
+        ],
+        "per_head_top_tokens": {
+          "Head_1": [
+            "pop (0.042)",
+            "were (0.033)",
+            "thing (0.026)"
+          ],
+          "Head_2": [
+            "recreation (0.060)",
+            "oh (0.051)",
+            "london (0.036)"
+          ],
+          "Head_3": [
+            "london (0.129)",
+            "third (0.032)",
+            "dollar (0.030)"
+          ],
+          "Head_4": [
+            "third (0.054)",
+            "of. (0.024)",
+            "chance. (0.023)"
+          ]
+        },
+        "raw_text": "Recreation of 1950's (London) Soho and the up-and-coming people. Based on a cult novel.<br /><br />Julian Temple is a video director. No more, no less. Give him 15 million dollars and he will make you a 15 million dollar pop video. Here he forgets that two minutes with people that can't really act is one thing - but two hours? What was he thinking of. Besides who are the audience? Who cares about a book that was well remembered way-back-when. The usual London story of the chancer taking his chance. <br /><br />What could really drag this film even further down? Oh I know, third rate songs that sound like they were made up on the spot. David Bowie crones the film title over and over a few times and that is the highlight. The soundtrack album is clay pigeon material.<br /><br />There is one good thing though. Good recreation of period Soho. Shame they couldn't think of anything to put in front of it."
+      },
+      {
+        "sample_id": 7,
+        "true_label": "Negative",
+        "pred_label": "Positive",
+        "prob_positive": 0.505,
+        "raw_len": 181,
+        "retained_len": 128,
+        "truncated": true,
+        "top_attended_tokens_overall": [
+          "you're (0.033)",
+          "out. (0.032)",
+          "attempt (0.032)",
+          "b (0.023)",
+          "fiction (0.022)",
+          "isn't (0.022)"
+        ],
+        "per_head_top_tokens": {
+          "Head_1": [
+            "weak (0.037)",
+            "isn't (0.035)",
+            "certainly (0.030)"
+          ],
+          "Head_2": [
+            "b (0.061)",
+            "attempt (0.044)",
+            "isn't (0.042)"
+          ],
+          "Head_3": [
+            "you're (0.101)",
+            "out. (0.070)",
+            "formula (0.049)"
+          ],
+          "Head_4": [
+            "fiction (0.066)",
+            "best (0.064)",
+            "attempt (0.048)"
+          ]
+        },
+        "raw_text": "This is a formula B science fiction movie, and the director made no bones about it. It is about a dragon who is restored to life by a scientific team. Everything done is stuff you've seen many times before. It is a weak script, with no real characters. In fact, it is full of stereotype characters and situations. The director attacks this by just making it a formula movie, with no attempt to fool us, and that gives this movie a mild appeal, but it isn't something you're likely to remember a while. It is best seen while you're cooking, cleaning, working out. Sort of mindless fun. It has its place in entertainment, but it certainly isn't something you sit down with friends to watch, unless you're all just drunk and don't care. The mass rating of 3.2 is probably fair. I don't think it is as crappy as most people, but I am surprised that some people in the postings thought this was spectacular. That really eludes me, as I see no attempt to even make this a memorable film."
+      },
+      {
+        "sample_id": 11,
+        "true_label": "Positive",
+        "pred_label": "Negative",
+        "prob_positive": 0.1904,
+        "raw_len": 52,
+        "retained_len": 52,
+        "truncated": false,
+        "top_attended_tokens_overall": [
+          "nice (0.070)",
+          "even (0.059)",
+          "imagine (0.055)",
+          "like (0.037)",
+          "found (0.032)",
+          "talk (0.030)"
+        ],
+        "per_head_top_tokens": {
+          "Head_1": [
+            "found (0.067)",
+            "truth (0.063)",
+            "you (0.061)"
+          ],
+          "Head_2": [
+            "even (0.101)",
+            "like (0.099)",
+            "people (0.057)"
+          ],
+          "Head_3": [
+            "nice (0.166)",
+            "imagine (0.091)",
+            "even (0.074)"
+          ],
+          "Head_4": [
+            "imagine (0.055)",
+            "nice (0.050)",
+            "even (0.038)"
+          ]
+        },
+        "raw_text": "I don't even like watching those late night talk shows, but I found this one really interesting. I imagine it's probably close to the truth---it \"feels\" like an honest account, if that means anything. Kinda feel for the people somewhat when you watch it. A nice movie for a Saturday night."
+      },
+      {
+        "sample_id": 13,
+        "true_label": "Negative",
+        "pred_label": "Positive",
+        "prob_positive": 0.9803,
+        "raw_len": 537,
+        "retained_len": 128,
+        "truncated": true,
+        "top_attended_tokens_overall": [
+          "journey (0.054)",
+          "brutally (0.041)",
+          "carlton (0.029)",
+          "dead (0.027)",
+          "carlton (0.027)",
+          "realistic (0.027)"
+        ],
+        "per_head_top_tokens": {
+          "Head_1": [
+            "journey (0.074)",
+            "realistic (0.060)",
+            "notorious (0.058)"
+          ],
+          "Head_2": [
+            "journey (0.073)",
+            "carlton (0.045)",
+            "carlton (0.041)"
+          ],
+          "Head_3": [
+            "brutally (0.125)",
+            "dead (0.048)",
+            "rave (0.048)"
+          ],
+          "Head_4": [
+            "member (0.050)",
+            "members (0.046)",
+            "events (0.043)"
+          ]
+        },
+        "raw_text": "'Rise of the Footsoldier' follows the unrelentingly cruel journey of gangster Carlton Leach and his associates through drugs, violence, sex, violence, guns, violence and did I mention violence?<br /><br />Protagonist Carlton Leach (Ricci Harnett), member of the I.C.F (Inner City Firm); a group of football hooligans turned professional gangsters, guides the audience through the events leading to the 1995 'Range Rover Killings', in which three gang members fell victim to particularly vicious professional 'hits'. Leach's success as a doorman and talent for locating aptly violent friends to control unruly punters at a local nightclub launches him into the company of notorious drug dealers and gangsters, profitably benefiting from the 80s/90s rave scene and drug culture.<br /><br />Opening with brutally realistic shots of the dead men, the viewer is left thirsty to understand what happened, but left wholly unsatisfied. The next 2 hours meander through a series of countless character introductions. Each of these basically establishes yet another typical 'hard man', shows him assaulting usually undeserving victims, before probably coming to an even nastier end. What little emotional understanding the audience is allowed to form for a few of the characters (for example a family man blamed for missing drugs) is quickly destroyed when they are either anti-climactically killed, or their storyline left unresolved. The hints of a plot introduced in the beginning are inadequately concluded with vague impressions of how the murders occurred, as the events are slotted into place with little reward for persevering with the hazy muddle of previous events. <br /><br />This film has been made with a standard formula in mind, for an audience who prefer violence and 'ard nut' slang to an actual storyline. 'Rise of the Footsoldier' borrows too much from 'Football Factory', leaving out the good bits, demonstrating no moral ramifications of hooligan subculture or establishing empathy with the protagonist. The violence, although brilliantly shot, seems excessive and implausible because no one is around long enough for the audience to form an emotional attachment. The implication that the gangs are untouchable by the police is fair enough, but machete-wielding doormen regularly committing blatant murder in public places pushes the imagination of even the most willing viewer. The audience are left bewildered as to the relevance of many key events and developed characters that had no knock on effect on the eventual conclusion. Attempted 'gritty-realism' is further destroyed with a substance called 'Truth Serum', which the Turkish Mafia use to coax honest answers from unwilling individuals. This is NOT the genre in which to invent psychologically unrealistic drugs, and renders the interrogation almost absurd.<br /><br />The actual scenes of violence (before becoming repetitive) hold some tension, spliced with rapid flashes of colour or the end of a film reel. Seamlessly choreographed brawls coupled with obligatory but effective shaky hand-held camera work saves the film, but unfortunately the plot (or lack there of) limits it to a niche demographic.<br /><br />In essence, the events this film is based on aren't deservedly represented, and an adequately sequential storyline is sacrificed for stereotypical characters and an unoriginal plot. This film has a place in the market, but if you like a bit of brain with your brutality this one isn't for you. <br /><br />http://www.obsessedwithfilm.com/"
+      },
+      {
+        "sample_id": 23,
+        "true_label": "Negative",
+        "pred_label": "Positive",
+        "prob_positive": 0.9052,
+        "raw_len": 293,
+        "retained_len": 128,
+        "truncated": true,
+        "top_attended_tokens_overall": [
+          "impossible (0.085)",
+          "victims (0.027)",
+          "out. (0.027)",
+          "due (0.023)",
+          "unknown (0.023)",
+          "ranger (0.023)"
+        ],
+        "per_head_top_tokens": {
+          "Head_1": [
+            "impossible (0.242)",
+            "victims (0.042)",
+            "quintet (0.020)"
+          ],
+          "Head_2": [
+            "unknown (0.033)",
+            "jeremy (0.024)",
+            "handsome (0.023)"
+          ],
+          "Head_3": [
+            "impossible (0.072)",
+            "due (0.052)",
+            "out. (0.042)"
+          ],
+          "Head_4": [
+            "ranger (0.043)",
+            "out. (0.037)",
+            "handsome (0.031)"
+          ]
+        },
+        "raw_text": "Since the characters begin with \"Unknown\" identities, they not identified by name, so you start with handsome James Caviezel waking up in a warehouse. He finds out the place is locked up tight. Don't ask - the windows are made with security glass, and it's impossible to get out. Four other awakening men make it a quintet - Mr. Caviezel in his \"Jean Jacket\", Barry Pepper in a \"Ranger Shirt\", Greg Kinnear with a \"Broken Nose\", Joe Pantoliano as a chair \"Bound Man\", and Jeremy Sisto shot and \"Handcuffed Man\". Oh, Man <br /><br />These five men have collective amnesia. They think that three of them are kidnappers, and two are victims - but, they don't know who is which or which is who. The forgetfulness is due to a pipe leak. Don't ask - it happens. Meanwhile, on the outside, lead lawman David Selby (as Parker) sends his cops to solve the kidnapping while one of the men's wives, Bridget Moynahan (as Eliza Coles), frantically waits. But, criminal element's gang leader, Peter Stormare in \"Snakeskin Boots\", is also on his way to the scene.<br /><br />Like the DVD synopsis says, \"As secrets are revealed and clues unraveled, (the five men) must race against time to figure out who is good and who is evil in order to stay alive.\" This story reads a lot better than it looks on film, unfortunately. When the secrets are finally revealed, and memories become clear, there is no longer much interest in what has happened. Simply, director Simon Brand has a great premise with Matthew Waynee's idea, but they encumber light investment in the characters holding the short end of the stick.<br /><br />**** Unknown (11/1/06) Simon Brand ~ James Caviezel, Barry Pepper, Greg Kinnear, David Selby"
+      },
+      {
+        "sample_id": 24,
+        "true_label": "Positive",
+        "pred_label": "Negative",
+        "prob_positive": 0.2969,
+        "raw_len": 162,
+        "retained_len": 128,
+        "truncated": true,
+        "top_attended_tokens_overall": [
+          "sounds (0.054)",
+          "50 (0.044)",
+          "head, (0.028)",
+          "drama (0.024)",
+          "romantic (0.020)",
+          "shifts (0.020)"
+        ],
+        "per_head_top_tokens": {
+          "Head_1": [
+            "head, (0.068)",
+            "romantic (0.037)",
+            "across (0.036)"
+          ],
+          "Head_2": [
+            "50 (0.049)",
+            "stewart (0.042)",
+            "drama (0.036)"
+          ],
+          "Head_3": [
+            "sounds (0.144)",
+            "50 (0.097)",
+            "mentioned (0.036)"
+          ],
+          "Head_4": [
+            "would (0.030)",
+            "shifts (0.026)",
+            "would (0.024)"
+          ]
+        },
+        "raw_text": "A number of contributors have mentioned the age difference between Stewart and Novak. She was 25 and he was 50 when this movie was released. I think that the difference didn't matter for a suspense drama like Vertigo, but it does matter for a romantic comedy. We can easily understand, that is, why his character would be attracted to hers, but it's less clear why hers would be attracted to his.<br /><br />Still, the movie works as a light romantic fantasy. The scene where she stares at him across the cat's head, with her dark painted-on eyebrows flaring and the sounds of her humming and the cat purring, is true magic. It's a little jarring, therefore, when the scene shifts to the top of the Flatiron Building, and we see the age difference very sharply. As he embraces her, she reaches up to run her fingers through his hair, but stops that motion and just brushes her fingertips lightly against his toupee."
+      }
+    ]
+  }
+}
