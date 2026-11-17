@@ -1,0 +1,347 @@
+{
+  "false_positives": [
+    {
+      "sentence": "Japan , co-hosts of the World Cup in 2002 and ranked 20th in the world by FIFA , are favourites to regain their title here .",
+      "pred_entity": "world",
+      "pred_type": "MISC",
+      "pred_span": [
+        14,
+        15
+      ]
+    },
+    {
+      "sentence": "Japan , co-hosts of the World Cup in 2002 and ranked 20th in the world by FIFA , are favourites to regain their title here .",
+      "pred_entity": "co-hosts",
+      "pred_type": "LOC",
+      "pred_span": [
+        2,
+        3
+      ]
+    },
+    {
+      "sentence": "Stefano Bordon is out through illness and Coste said he had dropped back row Corrado Covi , who had been recalled for the England game after five years out of the national team .",
+      "pred_entity": "national",
+      "pred_type": "MISC",
+      "pred_span": [
+        31,
+        32
+      ]
+    },
+    {
+      "sentence": "Bitar saved well again from Miura in the 37th minute , parrying away his header from a corner .",
+      "pred_entity": "parrying",
+      "pred_type": "PER",
+      "pred_span": [
+        11,
+        12
+      ]
+    },
+    {
+      "sentence": "Bowling : Doull 8-1-60-0 ( w-3 ) , Kennedy 3-0-24-0 ( w-7 nb-1 ) ,",
+      "pred_entity": "nb-1",
+      "pred_type": "ORG",
+      "pred_span": [
+        12,
+        13
+      ]
+    },
+    {
+      "sentence": "B. Young c Moin Khan b Waqar 5",
+      "pred_entity": "c",
+      "pred_type": "PER",
+      "pred_span": [
+        2,
+        3
+      ]
+    },
+    {
+      "sentence": "Bowyer , 19 , who was caught in the act by security cameras , pleaded guilty to a charge of affray at a court in London .",
+      "pred_entity": "affray",
+      "pred_type": "LOC",
+      "pred_span": [
+        20,
+        21
+      ]
+    },
+    {
+      "sentence": "He was fined and ordered to pay a total of 175 pounds to two members of staff injured in the fracas in an east London restaurant in October .",
+      "pred_entity": "fracas",
+      "pred_type": "ORG",
+      "pred_span": [
+        20,
+        21
+      ]
+    },
+    {
+      "sentence": "Centre Jason Little will miss Australia 's end-of-tour fixture against the Barbarians at Twickenham on Saturday .",
+      "pred_entity": "miss",
+      "pred_type": "ORG",
+      "pred_span": [
+        4,
+        5
+      ]
+    },
+    {
+      "sentence": "League duties restricted the Barbarians ' selectorial options but they still boast 13 internationals including England full-back Tim Stimpson and recalled wing Tony Underwood , plus All Black forwards Ian Jones and Norm Hewitt .",
+      "pred_entity": "wing",
+      "pred_type": "PER",
+      "pred_span": [
+        21,
+        22
+      ]
+    }
+  ],
+  "false_negatives": [
+    {
+      "sentence": "Defender Hassan Abbas rose to intercept a long ball into the area in the 84th minute but only managed to divert it into the top corner of Bitar 's goal .",
+      "gold_entity": "Bitar",
+      "gold_type": "PER",
+      "gold_span": [
+        27,
+        28
+      ]
+    },
+    {
+      "sentence": "Bitar pulled off fine saves whenever they did .",
+      "gold_entity": "Bitar",
+      "gold_type": "PER",
+      "gold_span": [
+        0,
+        1
+      ]
+    },
+    {
+      "sentence": "RUGBY UNION - CUTTITTA BACK FOR ITALY AFTER A YEAR .",
+      "gold_entity": "RUGBY UNION",
+      "gold_type": "ORG",
+      "gold_span": [
+        0,
+        2
+      ]
+    },
+    {
+      "sentence": "RUGBY UNION - CUTTITTA BACK FOR ITALY AFTER A YEAR .",
+      "gold_entity": "CUTTITTA",
+      "gold_type": "PER",
+      "gold_span": [
+        3,
+        4
+      ]
+    },
+    {
+      "sentence": "Cuttitta , who trainer George Coste said was certain to play on Saturday week , was named in a 21-man squad lacking only two of the team beaten 54-21 by England at Twickenham last month .",
+      "gold_entity": "Cuttitta",
+      "gold_type": "PER",
+      "gold_span": [
+        0,
+        1
+      ]
+    },
+    {
+      "sentence": "Stefano Bordon is out through illness and Coste said he had dropped back row Corrado Covi , who had been recalled for the England game after five years out of the national team .",
+      "gold_entity": "Coste",
+      "gold_type": "PER",
+      "gold_span": [
+        7,
+        8
+      ]
+    },
+    {
+      "sentence": "Cuttitta announced his retirement after the 1995 World Cup , where he took issue with being dropped from the Italy side that faced England in the pool stages .",
+      "gold_entity": "Cuttitta",
+      "gold_type": "PER",
+      "gold_span": [
+        0,
+        1
+      ]
+    },
+    {
+      "sentence": "Coste said he had approached the player two months ago about a comeback .",
+      "gold_entity": "Coste",
+      "gold_type": "PER",
+      "gold_span": [
+        0,
+        1
+      ]
+    },
+    {
+      "sentence": "\" He ended the World Cup on the wrong note , \" Coste said .",
+      "gold_entity": "Coste",
+      "gold_type": "PER",
+      "gold_span": [
+        12,
+        13
+      ]
+    },
+    {
+      "sentence": "Defender Hassan Abbas rose to intercept a long ball into the area in the 84th minute but only managed to divert it into the top corner of Bitar 's goal .",
+      "gold_entity": "Bitar",
+      "gold_type": "PER",
+      "gold_span": [
+        27,
+        28
+      ]
+    }
+  ],
+  "boundary_errors": [
+    {
+      "sentence": "AL-AIN , United Arab Emirates 1996-12-06",
+      "gold_entity": "United Arab Emirates",
+      "gold_type": "LOC",
+      "gold_span": [
+        2,
+        5
+      ],
+      "pred_entity": "United",
+      "pred_type": "LOC",
+      "pred_span": [
+        2,
+        3
+      ]
+    },
+    {
+      "sentence": "AL-AIN , United Arab Emirates 1996-12-06",
+      "gold_entity": "United Arab Emirates",
+      "gold_type": "LOC",
+      "gold_span": [
+        2,
+        5
+      ],
+      "pred_entity": "Arab Emirates",
+      "pred_type": "LOC",
+      "pred_span": [
+        3,
+        5
+      ]
+    },
+    {
+      "sentence": "The former Soviet republic was playing in an Asian Cup finals tie for the first time .",
+      "gold_entity": "Soviet",
+      "gold_type": "MISC",
+      "gold_span": [
+        2,
+        3
+      ],
+      "pred_entity": "Soviet republic",
+      "pred_type": "MISC",
+      "pred_span": [
+        2,
+        4
+      ]
+    },
+    {
+      "sentence": "Despite winning the Asian Games title two years ago , Uzbekistan are in the finals as outsiders .",
+      "gold_entity": "Asian Games",
+      "gold_type": "MISC",
+      "gold_span": [
+        3,
+        5
+      ],
+      "pred_entity": "Asian",
+      "pred_type": "MISC",
+      "pred_span": [
+        3,
+        4
+      ]
+    },
+    {
+      "sentence": "Takuya Takagi scored the winner in the 88th minute , rising to head a Hiroshige Yanagimoto cross towards the Syrian goal which goalkeeper Salem Bitar appeared to have covered but then allowed to slip into the net .",
+      "gold_entity": "Salem Bitar",
+      "gold_type": "PER",
+      "gold_span": [
+        23,
+        25
+      ],
+      "pred_entity": "Salem",
+      "pred_type": "PER",
+      "pred_span": [
+        23,
+        24
+      ]
+    },
+    {
+      "sentence": "Cuttitta announced his retirement after the 1995 World Cup , where he took issue with being dropped from the Italy side that faced England in the pool stages .",
+      "gold_entity": "1995 World Cup",
+      "gold_type": "MISC",
+      "gold_span": [
+        6,
+        9
+      ],
+      "pred_entity": "World Cup",
+      "pred_type": "MISC",
+      "pred_span": [
+        7,
+        9
+      ]
+    },
+    {
+      "sentence": "AL-AIN , United Arab Emirates 1996-12-06",
+      "gold_entity": "United Arab Emirates",
+      "gold_type": "LOC",
+      "gold_span": [
+        2,
+        5
+      ],
+      "pred_entity": "United",
+      "pred_type": "LOC",
+      "pred_span": [
+        2,
+        3
+      ]
+    },
+    {
+      "sentence": "AL-AIN , United Arab Emirates 1996-12-06",
+      "gold_entity": "United Arab Emirates",
+      "gold_type": "LOC",
+      "gold_span": [
+        2,
+        5
+      ],
+      "pred_entity": "Arab Emirates",
+      "pred_type": "LOC",
+      "pred_span": [
+        3,
+        5
+      ]
+    },
+    {
+      "sentence": "Takuya Takagi headed the winner in the 88th minute of the group C game after goalkeeper Salem Bitar spoiled a mistake-free display by allowing the ball to slip under his body .",
+      "gold_entity": "Salem Bitar",
+      "gold_type": "PER",
+      "gold_span": [
+        16,
+        18
+      ],
+      "pred_entity": "Salem",
+      "pred_type": "PER",
+      "pred_span": [
+        16,
+        17
+      ]
+    },
+    {
+      "sentence": "FREESTYLE SKIING-WORLD CUP MOGUL RESULTS .",
+      "gold_entity": "SKIING-WORLD CUP",
+      "gold_type": "MISC",
+      "gold_span": [
+        1,
+        3
+      ],
+      "pred_entity": "CUP",
+      "pred_type": "MISC",
+      "pred_span": [
+        2,
+        3
+      ]
+    }
+  ],
+  "length_f1": {
+    "1": 0.682,
+    "2": 0.763,
+    "3": 0.4314,
+    "4": 0.122
+  },
+  "test_f1": 0.6926846041433853,
+  "test_precision": 0.6729580758309671,
+  "test_recall": 0.7136025504782146
+}
